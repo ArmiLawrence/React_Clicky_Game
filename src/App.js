@@ -44,6 +44,7 @@ class App extends React.Component {
         return;
       }
 
+      //score is derived from clickedFriend.length.
       this.setState({friends, clickedFriend, score: clickedFriend.length, gamePlay: ""});
     }
   }
