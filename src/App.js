@@ -27,13 +27,17 @@ class App extends React.Component {
       return;
     }
     else{
+      //pushing id in clickFriend array
       clickedFriend.push(id)
 
+      //randomizing images
       for (let i = friends.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [friends[i],  friends[j]] = [friends[j],  friends[i]];
       }
 
+      //for the sake of having a winner, picking 6 because I have 9 images. There should be enough losses here.
+      //getting the state of array, score, and stating that player won.
       if(clickedFriend.length === 6){
         this.setState({clickedFriend: [], score: 6, gamePlay:  "You won!!"});
         console.log("You Win");
@@ -46,9 +50,7 @@ class App extends React.Component {
 
   render() {
     return (
-
-
-      
+     
         <Wrapper> 
           <Title
           score={this.state.score}
@@ -63,8 +65,7 @@ class App extends React.Component {
               />
             ))}
           </Wrapper>
-
-          
+         
     );
   }
 }
