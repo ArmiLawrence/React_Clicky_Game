@@ -29,6 +29,11 @@ class App extends React.Component {
     else{
       clickedFriend.push(id)
 
+      for (let i = friends.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [friends[i],  friends[j]] = [friends[j],  friends[i]];
+      }
+
       if(clickedFriend.length === 6){
         this.setState({clickedFriend: [], score: 6, gamePlay:  "You won!!"});
         console.log("You Win");
@@ -36,13 +41,7 @@ class App extends React.Component {
       }
 
       this.setState({friends, clickedFriend, score: clickedFriend.length, gamePlay: ""});
-
-      for (let i = friends.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [friends[i],  friends[j]] = [friends[j],  friends[i]];
-      }
     }
-
   }
 
   render() {
