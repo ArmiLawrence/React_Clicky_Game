@@ -12,10 +12,10 @@ function Title(props) {
         <li>If you score 6 points, you win!</li>
         <li>If you click on the same Avenger twice, you lose!</li>
     </div>
-    <div className="scores">
+    <div className="scores" >
       Score: {props.score}
     </div>
-    <div className="gamePlay">
+    <div className="gamePlay" >
       Game Status: Click on an Avenger Friend! {props.gamePlay}
     </div>
   </div>
